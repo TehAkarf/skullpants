@@ -1,39 +1,44 @@
-﻿Theme - Home, what does it mean
-Concept - Cutely Horror, alice and wonderland, depression, isolation???
+﻿Theme - (Home, Depression, Memories)
+Concept - Yami Kawaii Art Style, Platformer, Alice and Wonderland, Soft Music Box
 
 
 
 
-5 stages 
+4 stages (Scenes, experiences)
 
 
-1 - House - Cold, dark, dwery, isolation, downtime, storybook 
-2 - School/Carnival - unicorns, loops, ignorance 
-3 - friends/Water - masks, deceptions, mermaid, lack of confidence
-4 - House - Touch of past meanings, family, safety, (good endings or bad??/)
+1 - DreamLand House - Dreamy, light hearted, hints of horror/dark theme, Music should mimic
+2 - Carnival - Small cracks, slight uneasy distortions, mirrors, music should sound like first but ever so slightly off
+3 - Water - Large parts of the world missing, dark and/or mundane themes hidden, Depths, rising darkness, music should be a slowly, more bluntly off, version of before
+4 - House - Drewry, darken, real version of the dream house
 
 
-Prolouge -
-
-
-        The game starts off with annon text asking about refelections and mirror images. Talking about the disconnect between reality on mentality.  
-
-
+ 
 Stage 1 -  Home 
 
 
-        Alice is fixing her bed, a carasel on her nightstand turns. The world seperates into the real and reflection. The bedroom itself is very similar between real and reflection, spare things the call to the future levels (Broken mirror, outside envrio, the barrier of the door, the image of the couple), 
-
-
-        Leave the bedroom, down the hallway, images of family distorted, there is the family, preparing for breakfest, They are all ghosts, speaking nonesense, slowly everything starts to fade till she’s sitting alone at a table with a bottle with a tag on it, “Drink me” 
+        Alice wakes in a lovely dream like room, she pauses, a cat meow can be heard -
+        (Opt. A text box appears, “Alice, come find me. Come Alice, find me.”)
+Player will then run Alice through a hallway, into the kitchen, where she will find an object that stands out completely.
+This will send a crack in the dream like world, her dream is now cracked
+The cat walks up to her, looking slightly off, (Opt. Text box, “Don’t worry Alice, there’s still something else.”) and leads her away from the item off to the next level
         
-Stage 2 -
+Stage 2 - Cracked Carnival 
 
 
-        
+Alice is now in a carnival, specifically a mirror maze/fun house. Once again the cat calls to her. 
+She proceeds through the funhouse, encountering simple jump puzzles?, small item echos of a similar nature to the previous trigger item to occur, and every fragile item has some kind of crack in it.
+This leads her back to the cat in the beginning section(Opt. on a carousel horse, which would be the new trigger item), who will speak to her about how she just looped, and will keep looping. This sends another shockwave through the dream world.
 
 
-Stage 3 - 
+Stage 3 - Broken Ocean
 
 
-Stage 4 -
+Alice finds herself falling through a broken part of the carnival into what seems like water. She goes down, down, down, to the bottom. Parts of this world are missing, revealing a darker, drewry world. Images of school desks, books, dirty dishes, etc. will slowly appear as she gets closer to the cat. 
+She can continue through (Opt. Float effect on Jump? Slow lift but fast pull down ((like she can’t seem to leave the bottom))) jump puzzles, (maybe over the real world objects), She comes up to a mermaid this time, holding the cat doll. This mermaid laughs, before throwing the doll to Alice, and swims off. This revelation the cat was a doll the whole time, sends another shockwave.
+
+
+Stage 4 - Home 
+
+
+        Alice suddenly wakes from her bed. The room is a drewry, dark, realistic version of the dream world home. Alice is called by her family member, player then slowly walks alice down the same but drewry hallway from before. She comes to a table, a happy cat sitting on top. It meows, and the game ends.
