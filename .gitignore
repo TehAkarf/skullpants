@@ -347,3 +347,4 @@ sysinfo.txt
 /[Bb]uilds/
 /[Uu]nity[Pp]ackage[Mm]anager/
 /Assets/AssetStoreTools*
+*.csproj

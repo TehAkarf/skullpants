@@ -64,6 +64,7 @@
     <Compile Include="Assets\scripts\gameplay\TransitionPoint.cs" />
     <Compile Include="Assets\scripts\managers\GameManager.cs" />
     <Compile Include="Assets\scripts\managers\InitialManager.cs" />
+    <Compile Include="Assets\scripts\Player_Controller.cs" />
     <Compile Include="Assets\scripts\ui\ScreenFader.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/_GGJSkullPants/skullpants/master/SkullPants/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

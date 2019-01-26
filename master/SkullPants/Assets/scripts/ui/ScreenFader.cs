@@ -60,7 +60,6 @@ public class ScreenFader : MonoBehaviour
         sInstance = Instantiate( controllerPrefab );
     }
 
-
     protected IEnumerator Fade( float finalAlpha, CanvasGroup canvasGroup )
     {
         mIsFading = true;
