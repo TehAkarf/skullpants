@@ -347,5 +347,8 @@ sysinfo.txt
 /[Bb]uilds/
 /[Uu]nity[Pp]ackage[Mm]anager/
 /Assets/AssetStoreTools*
+<<<<<<< HEAD
+=======
 master/SkullPants/Assembly-CSharp.csproj
+>>>>>>> 12931e85e7c0ce351f886b826f9f012233672cd7
 *.csproj

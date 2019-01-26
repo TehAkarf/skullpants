@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     //protected SceneTransitionDestination.DestinationTag mZoneRestartDestinationTag;
     public bool mTransitioning;
 
-
     //Async loads load the screen fader and tranistion to the next scene.
     public static GameManager Instance
     {
@@ -72,8 +71,6 @@ public class GameManager : MonoBehaviour
             //mZoneRestartDestinationTag = SceneTransitionDestination.DestinationTag.A;
         }
         */
-
-
     }
 
     public static void TransitionToScene(TransitionPoint transitionPoint)

@@ -125,6 +125,7 @@
     <Compile Include="Assets\scripts\gameplay\TransitionPoint.cs" />
     <Compile Include="Assets\scripts\managers\GameManager.cs" />
     <Compile Include="Assets\scripts\managers\InitialManager.cs" />
+    <Compile Include="Assets\scripts\Player_Controller.cs" />
     <Compile Include="Assets\scripts\ui\ScreenFader.cs" />
 >>>>>>> e05a9638876c5cf3bdf45bd4f94c76a01def6e82
     <Reference Include="Unity.TextMeshPro.Editor">
