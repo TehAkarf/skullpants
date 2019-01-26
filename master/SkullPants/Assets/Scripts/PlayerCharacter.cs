@@ -132,13 +132,11 @@ public class PlayerCharacter : MonoBehaviour
     void InputUpdate()
     {
         UpdateFacing();
-        CheckForGrounded();
         if (m_CharacterController2D.mGrounded)
         {
             GroundedHorizontalMovement(true);
             GroundedVerticalMovement();
-            if (CheckForJumpInput())
-                SetVerticalMovement(jumpSpeed);
+            CheckForJumpInput();
         }
         else
         {
@@ -266,15 +264,6 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-    public bool CheckForGrounded()
-    {
-        return m_CharacterController2D.mGrounded;
-    }
-    public bool IsFalling()
-    {
-        return m_MoveVector.y < 0f && !m_Animator.GetBool(m_HashGroundedPara);
-    }
-
     public void UpdateJump()
     {
         if (!PlayerInput.Instance.Jump.Held && m_MoveVector.y > 0.0f)
@@ -306,18 +295,10 @@ public class PlayerCharacter : MonoBehaviour
         m_MoveVector.y -= gravity * Time.deltaTime;
     }
 
-    public bool CheckForJumpInput()
+    public void CheckForJumpInput()
     {
-        return PlayerInput.Instance.Jump.Down;
-    }
-    public void SetVerticalMovement(float newVerticalMovement)
-    {
-        m_MoveVector.y = newVerticalMovement;
-    }
-
-    public bool CheckForFallInput()
-    {
-        return PlayerInput.Instance.Vertical.Value < -float.Epsilon && PlayerInput.Instance.Jump.Down;
+        if(PlayerInput.Instance.Jump.Down)
+            m_MoveVector.y = jumpSpeed;
     }
 
 }
