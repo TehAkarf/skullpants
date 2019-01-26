@@ -1,0 +1,6 @@
+Game Manager -> Jesse
+Input System -> Jesse
+Event Manager -> Jesse
+Music Sound/Manager -> Robbie
+Player Controller -> Gabe
+
