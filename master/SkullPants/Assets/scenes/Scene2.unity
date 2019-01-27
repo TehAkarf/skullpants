@@ -1423,8 +1423,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442078785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.99, y: -72.9, z: -1.0740875}
-  m_LocalScale: {x: 11.922842, y: 1.7186136, z: 1}
+  m_LocalPosition: {x: 40.689, y: -72.9, z: -1.0740875}
+  m_LocalScale: {x: 16.271935, y: 1.7186136, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1756,12 +1756,12 @@ PrefabInstance:
     - target: {fileID: 3709932623115528210, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.36646688
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 3709932623115528210, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.147824
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3709932623115528210, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
@@ -3564,7 +3564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148251655}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.79, y: -76.091, z: 10}
+  m_LocalPosition: {x: 39.79, y: -76.091, z: 1}
   m_LocalScale: {x: 2.7948596, y: 4.7333097, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3756,6 +3756,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 8382499750598944668, guid: 265c4ab407aca93408967cba02f1aa40,
+        type: 3}
+      propertyPath: m_CameraDistance
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 5440297349607480592, guid: 265c4ab407aca93408967cba02f1aa40,
         type: 3}
       propertyPath: m_Lens.FieldOfView
@@ -3765,11 +3770,6 @@ PrefabInstance:
         type: 3}
       propertyPath: field of view
       value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382499750598944668, guid: 265c4ab407aca93408967cba02f1aa40,
-        type: 3}
-      propertyPath: m_CameraDistance
-      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 265c4ab407aca93408967cba02f1aa40, type: 3}
