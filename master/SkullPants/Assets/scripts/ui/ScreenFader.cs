@@ -85,10 +85,6 @@ public class ScreenFader : MonoBehaviour
         CanvasGroup canvasGroup;
         if ( Instance.mFaderCanvasGroup.alpha > 0.1f )
             canvasGroup = Instance.mFaderCanvasGroup;
-        else if ( Instance.mGameOverCanvasGroup.alpha > 0.1f )
-            canvasGroup = Instance.mGameOverCanvasGroup;
-        else if ( Instance.mWinCanvasGroup.alpha > 0.1f )
-            canvasGroup = Instance.mWinCanvasGroup;
         else
             canvasGroup = Instance.mLoadingCanvasGroup;
 

@@ -24,8 +24,8 @@ public class SceneChanger : MonoBehaviour
 
     private void ChangeToNextScene()
     {
-         StartCoroutine(ScreenFader.FadeSceneOut(ScreenFader.FadeType.Loading));
-         SceneManager.LoadSceneAsync(mNextScene);
+        StartCoroutine(ScreenFader.FadeSceneOut(ScreenFader.FadeType.Loading));
+        SceneManager.LoadSceneAsync(mNextScene);
         PlayerInput.Instance.ReleaseControl();
     }
 }
