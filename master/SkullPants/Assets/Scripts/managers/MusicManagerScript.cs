@@ -42,11 +42,6 @@ public class MusicManagerScript : MonoBehaviour
     {
         // Load all audio sources
         audioSources = gameObject.GetComponents<AudioSource>();
-<<<<<<< HEAD
-        //PlayMusic(0);
-        
-=======
->>>>>>> 34dfa72a831bf28789e565a0e40ca2a9401ada36
     }
 
     // Update is called once per frame
