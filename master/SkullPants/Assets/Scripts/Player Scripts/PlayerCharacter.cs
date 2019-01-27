@@ -27,9 +27,6 @@ public class PlayerCharacter : MonoBehaviour
     public float jumpAbortSpeedReduction = 100f;
     public bool dashWhileAirborne = false;
 
-    //public RandomAudioPlayer footstepAudioPlayer;
-    //public RandomAudioPlayer landingAudioPlayer;
-
     public float cameraHorizontalFacingOffset;
     public float cameraHorizontalSpeedOffset;
     public float cameraVerticalInputOffset;
@@ -51,7 +48,6 @@ public class PlayerCharacter : MonoBehaviour
     protected float m_CamFollowVerticalSpeed;
     protected float m_VerticalCameraOffsetTimer;
 
-    //protected Checkpoint m_LastCheckpoint = null;
     protected Vector2 m_StartingPosition = Vector2.zero;
     protected bool m_StartingFacingLeft = false;
 
@@ -60,6 +56,7 @@ public class PlayerCharacter : MonoBehaviour
     protected readonly int m_HashHorizontalSpeedPara = Animator.StringToHash("HorizontalSpeed");
     protected readonly int m_HashVerticalSpeedPara = Animator.StringToHash("VerticalSpeed");
     protected readonly int m_HashGroundedPara = Animator.StringToHash("Grounded");
+    protected readonly int m_HashJumpPara = Animator.StringToHash("Jump");
 
     protected ContactPoint2D[] m_ContactsBuffer = new ContactPoint2D[16];
 
@@ -92,25 +89,6 @@ public class PlayerCharacter : MonoBehaviour
         m_StartingFacingLeft = GetFacing() < 0.0f;
     }
 
-    /* void OnTriggerEnter2D(Collider2D other)
-    {
-        Pushable pushable = other.GetComponent<Pushable>();
-        if (pushable != null)
-        {
-            m_CurrentPushables.Add(pushable);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        Pushable pushable = other.GetComponent<Pushable>();
-        if (pushable != null)
-        {
-            if (m_CurrentPushables.Contains(pushable))
-                m_CurrentPushables.Remove(pushable);
-        }
-    }*/
-
     void Update()
     {
         if (PlayerInput.Instance.Pause.Down)
@@ -132,6 +110,7 @@ public class PlayerCharacter : MonoBehaviour
     void InputUpdate()
     {
         UpdateFacing();
+        m_Animator.SetBool(m_HashGroundedPara, m_CharacterController2D.mGrounded);
         if (m_CharacterController2D.mGrounded)
         {
             GroundedHorizontalMovement(true);
@@ -269,6 +248,7 @@ public class PlayerCharacter : MonoBehaviour
         if (!PlayerInput.Instance.Jump.Held && m_MoveVector.y > 0.0f)
         {
             m_MoveVector.y -= jumpAbortSpeedReduction * Time.deltaTime;
+            m_Animator.SetBool(m_HashJumpPara, false);
         }
     }
 
@@ -297,8 +277,11 @@ public class PlayerCharacter : MonoBehaviour
 
     public void CheckForJumpInput()
     {
-        if(PlayerInput.Instance.Jump.Down)
+        if (PlayerInput.Instance.Jump.Down)
+        {
             m_MoveVector.y = jumpSpeed;
+            m_Animator.SetBool(m_HashJumpPara, true);
+        }
     }
 
     /*

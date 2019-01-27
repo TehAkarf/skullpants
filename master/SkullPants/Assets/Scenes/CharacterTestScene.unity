@@ -465,7 +465,7 @@ PrefabInstance:
     - target: {fileID: 3709932623115528220, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Alice
       objectReference: {fileID: 0}
     - target: {fileID: 3709932623115528210, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
@@ -526,8 +526,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 525c1df84f65d024d815ac2191b4b57a,
+      objectReference: {fileID: 21300002, guid: 11158a2fa94103343be91d677bd76154,
         type: 3}
+    - target: {fileID: 3709932623115528211, guid: 3ae09851e92bcde4fa6850e8524f5f70,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709932623115528211, guid: 3ae09851e92bcde4fa6850e8524f5f70,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709932623115528211, guid: 3ae09851e92bcde4fa6850e8524f5f70,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3709932623115528208, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
       propertyPath: m_Controller
@@ -605,7 +620,7 @@ PrefabInstance:
     - target: {fileID: 8422438301744003265, guid: 265c4ab407aca93408967cba02f1aa40,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 265c4ab407aca93408967cba02f1aa40, type: 3}

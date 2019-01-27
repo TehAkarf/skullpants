@@ -9,8 +9,18 @@ public class SceneChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //if(ScreenFader.Instance.mIsFading)
         StartCoroutine(ScreenFader.FadeSceneIn());
+        
+    }
+    IEnumerator FadeSceneIn()
+    {
+        while(ScreenFader.Instance.mIsFading)
+        {
+            yield return null;
+        }
         PlayerInput.Instance.GainControl();
+        yield return StartCoroutine(ScreenFader.FadeSceneIn()); 
     }
 
 
