@@ -5,15 +5,45 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class MusicManagerScript : MonoBehaviour
 {
+    protected static MusicManagerScript sInstance;
+
+
     AudioSource[] audioSources;
     float volume = 0.5f;
 
+
+    public static MusicManagerScript Instance
+    {
+        get
+        {
+            if (sInstance != null)
+                return sInstance;
+
+            sInstance = FindObjectOfType<MusicManagerScript>();
+
+            if (sInstance != null)
+                return sInstance;
+
+            return sInstance;
+        }
+    }
+
+    private void Awake()
+    {
+        if (Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
         // Load all audio sources
         audioSources = gameObject.GetComponents<AudioSource>();
-        PlayMusic(0);
+        //PlayMusic(0);
+        
     }
 
     // Update is called once per frame

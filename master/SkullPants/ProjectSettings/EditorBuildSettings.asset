@@ -5,25 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/scenes/Initial.unity
-    guid: 1c77065405e946d4280de127b8b950f1
+    path: Assets/Scenes/Initial.unity
+    guid: 8579bbe2fa81a604c94243c8eb4cb45d
   - enabled: 1
-    path: Assets/scenes/Scene1.unity
-    guid: 416c06d8147e04843ba76afcc4d8bac8
+    path: Assets/Scenes/Scene1.unity
+    guid: d27753c6d97d11a45883f44e684b11d7
   - enabled: 1
-    path: Assets/scenes/Scene2.unity
-    guid: 58d916b0be30b444388dcd74261a8c38
+    path: Assets/Scenes/Scene2.unity
+    guid: b6bbd0c67ece95347b6947ce86692a07
   - enabled: 1
-    path: Assets/scenes/Scene3.unity
-    guid: 8b3c45a522852254ca976955aabcf4cc
+    path: Assets/Scenes/Scene3.unity
+    guid: 0399d92511bdfbe4bb113647ee465ccc
   - enabled: 1
-    path: Assets/scenes/Scene4.unity
-    guid: 40a2bdc2052a1b04387086bf43f47618
+    path: Assets/Scenes/Scene4.unity
+    guid: 6e910388509aab546a97fd980c912bfc
   - enabled: 1
-    path: Assets/scenes/Ending.unity
-    guid: 72ca415ac598cf2458c1cbd1755a2550
+    path: Assets/Scenes/Ending.unity
+    guid: 124a42af7d19b5a43a7d290027fda366
   m_configObjects: {}

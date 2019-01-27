@@ -123,17 +123,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 mCeilinged = false;
-
-                /*for (int j = 0; j < mHitBuffer.Length; j++)
-                {
-                    if (mHitBuffer[j].collider != null)
-                    {
-                        if (!PhysicsHelper.ColliderHasPlatformEffector(mHitBuffer[j].collider))
-                        {
-                            mCeilinged = true;
-                        }
-                    }
-                }*/
             }
         }
 
@@ -157,19 +146,6 @@ public class PlayerController : MonoBehaviour
             }
 
             Vector2 relativeVelocity = Velocity;
-            /*for (int i = 0; i < mGroundColliders.Length; i++)
-            {
-                if (mGroundColliders[i] == null)
-                    continue;
-
-                MovingPlatform movingPlatform;
-
-                if (PhysicsHelper.TryGetMovingPlatform(m_GroundColliders[i], out movingPlatform))
-                {
-                    relativeVelocity -= movingPlatform.Velocity / Time.deltaTime;
-                    break;
-                }
-            }*/
 
             if (Mathf.Approximately(groundNormal.x, 0f) && Mathf.Approximately(groundNormal.y, 0f))
             {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScreenFader : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class ScreenFader : MonoBehaviour
 
     //Variables to hold the values for this class
     protected static ScreenFader sInstance; //singleton
-    
+
     public float mFadeDuration = 1f;  //How long should a fade take?
 
     public bool mIsFading;  //Are we fading right now
@@ -24,6 +25,14 @@ public class ScreenFader : MonoBehaviour
     public CanvasGroup mLoadingCanvasGroup;
     public CanvasGroup mGameOverCanvasGroup;
     public CanvasGroup mWinCanvasGroup;
+
+
+    int mNextScene = 0;
+    enum SceneNames
+    {
+        Initial,Scene1, Scene2, Scene3, Scene4, Ending
+    }
+
 
     public static ScreenFader Instance
     {
@@ -41,6 +50,11 @@ public class ScreenFader : MonoBehaviour
 
             return sInstance;
         }
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void Awake()
@@ -80,6 +94,7 @@ public class ScreenFader : MonoBehaviour
         Instance.mFaderCanvasGroup.alpha = alpha;
     }
 
+    //Loading becomes invisible
     public static IEnumerator FadeSceneIn()
     {
         CanvasGroup canvasGroup;
@@ -91,8 +106,12 @@ public class ScreenFader : MonoBehaviour
         yield return Instance.StartCoroutine( Instance.Fade( 0f, canvasGroup ) );
 
         canvasGroup.gameObject.SetActive( false );
+
+        if(PlayerInput.Instance)
+            PlayerInput.Instance.GainControl();
     }
 
+    //Loading becomes visible
     public static IEnumerator FadeSceneOut( FadeType fadeType = FadeType.Black )
     {
         CanvasGroup canvasGroup;
@@ -113,7 +132,40 @@ public class ScreenFader : MonoBehaviour
         }
 
         canvasGroup.gameObject.SetActive( true );
-
         yield return Instance.StartCoroutine( Instance.Fade( 1f, canvasGroup ) );
     }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        mNextScene++;
+        if (mNextScene >= 6)
+            mNextScene = 0;
+
+        if (mIsFading)
+            StartCoroutine(WaitForFade());
+        else
+            StartCoroutine(ScreenFader.FadeSceneIn());
+    }
+
+    IEnumerator WaitForFade()
+    {
+        while(mIsFading)
+        {
+            yield return null;
+        }
+
+        yield return StartCoroutine(ScreenFader.FadeSceneIn());
+    }
+
+    public IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(1f);
+
+        SceneNames fSceneName = (SceneNames)mNextScene;
+        yield return StartCoroutine(ScreenFader.FadeSceneOut(ScreenFader.FadeType.Loading));
+
+        SceneManager.LoadSceneAsync(fSceneName.ToString());
+        yield return null;
+    }
+
 }
