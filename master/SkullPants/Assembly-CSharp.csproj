@@ -120,6 +120,7 @@
     <Compile Include="Assets\Scripts\managers\MusicManagerScript.cs" />
     <Compile Include="Assets\Scripts\managers\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\managers\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\managers\TextManager.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\AutoCamSetup.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\InputComponent.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerCharacter.cs" />

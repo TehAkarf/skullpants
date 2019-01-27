@@ -32,6 +32,7 @@ public class ScreenFader : MonoBehaviour
     {
         Initial,Scene1, Scene2, Scene3, Scene4, Ending
     }
+    SceneNames mCurrentScene = SceneNames.Initial;
 
 
     public static ScreenFader Instance
@@ -107,13 +108,21 @@ public class ScreenFader : MonoBehaviour
 
         canvasGroup.gameObject.SetActive( false );
 
-        if(PlayerInput.Instance)
+        //after fadng in, display a start of level text if any
+        Instance.DisplayLevelText(Instance.mCurrentScene, true);
+
+        if (PlayerInput.Instance)
             PlayerInput.Instance.GainControl();
     }
 
     //Loading becomes visible
     public static IEnumerator FadeSceneOut( FadeType fadeType = FadeType.Black )
     {
+        //before fading out, display an end of level text if any
+        Instance.DisplayLevelText(Instance.mCurrentScene, false);
+        if(Instance.mCurrentScene != SceneNames.Initial)
+            yield return new WaitForSeconds(4f);
+
         CanvasGroup canvasGroup;
         switch ( fadeType )
         {
@@ -137,6 +146,7 @@ public class ScreenFader : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        mCurrentScene = (SceneNames)mNextScene;
         mNextScene++;
         if (mNextScene >= 6)
             mNextScene = 0;
@@ -145,6 +155,8 @@ public class ScreenFader : MonoBehaviour
             StartCoroutine(WaitForFade());
         else
             StartCoroutine(ScreenFader.FadeSceneIn());
+        if(mCurrentScene != SceneNames.Initial)
+            MusicManagerScript.sInstance.PlayMusic(mNextScene - 1);
     }
 
     IEnumerator WaitForFade()
@@ -168,4 +180,35 @@ public class ScreenFader : MonoBehaviour
         yield return null;
     }
 
+
+    void DisplayLevelText(SceneNames pDisplayScene, bool pStartOfLevel)
+    {
+        int fText = -1;
+        switch (pDisplayScene)
+        {
+            case SceneNames.Scene1:
+                if (pStartOfLevel)
+                    fText = 0;
+                else
+                    fText = 1;
+                    break;
+            case SceneNames.Scene2:
+                if (pStartOfLevel)
+                    fText = 2;
+                else
+                    fText = 3;
+                break;
+            case SceneNames.Scene3:
+                if (pStartOfLevel)
+                    fText = 4;
+                break;      
+            case SceneNames.Scene4:
+                if (pStartOfLevel)
+                    fText = 5;
+                else
+                    fText = 6;
+                break;
+        }
+        TextManager.Instance.DisplayText(fText);
+    }
 }

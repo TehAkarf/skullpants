@@ -5,14 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class MusicManagerScript : MonoBehaviour
 {
-    protected static MusicManagerScript sInstance;
+    public static MusicManagerScript sInstance;
 
 
     AudioSource[] audioSources;
     float volume = 0.5f;
 
 
-    public static MusicManagerScript Instance
+   /* public static MusicManagerScript Instance
     {
         get
         {
@@ -26,15 +26,17 @@ public class MusicManagerScript : MonoBehaviour
 
             return sInstance;
         }
-    }
+    }*/
 
     private void Awake()
     {
-        if (Instance != this)
+        if (sInstance == null)
         {
-            Destroy(gameObject);
-            return;
+            sInstance = this;
         }
+        else
+            Destroy(gameObject);
+
         DontDestroyOnLoad(gameObject);
     }
     // Start is called before the first frame update
@@ -73,9 +75,13 @@ public class MusicManagerScript : MonoBehaviour
         }
     }
 
-    void PlayMusic(int value)
+    public void PlayMusic(int value)
     {
         // 0 = Dream House, 1 = Carnival, 2 = BrokenDreams, 3 = Home
+        foreach(AudioSource fSource in audioSources)
+        {
+            fSource.Stop();
+        }
         switch (value)
         {
             case 0: // Play Dream House
