@@ -40,10 +40,6 @@ public class PlayerController : MonoBehaviour
         Physics2D.queriesStartInColliders = false;
     }
 
-    void Update()
-    {
-    }
-
     private void FixedUpdate()
     {
         mPreviousPosition = mRigidBody.position;

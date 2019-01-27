@@ -301,4 +301,53 @@ public class PlayerCharacter : MonoBehaviour
             m_MoveVector.y = jumpSpeed;
     }
 
+    /*
+    public void CheckForPushing()
+    {
+        bool pushableOnCorrectSide = false;
+        Pushable previousPushable = m_CurrentPushable;
+
+        m_CurrentPushable = null;
+
+        if (m_CurrentPushables.Count > 0)
+        {
+            bool movingRight = PlayerInput.Instance.Horizontal.Value > float.Epsilon;
+            bool movingLeft = PlayerInput.Instance.Horizontal.Value < -float.Epsilon;
+
+            for (int i = 0; i < m_CurrentPushables.Count; i++)
+            {
+                float pushablePosX = m_CurrentPushables[i].pushablePosition.position.x;
+                float playerPosX = m_Transform.position.x;
+                if (pushablePosX < playerPosX && movingLeft || pushablePosX > playerPosX && movingRight)
+                {
+                    pushableOnCorrectSide = true;
+                    m_CurrentPushable = m_CurrentPushables[i];
+                    break;
+                }
+            }
+
+            if (pushableOnCorrectSide)
+            {
+                Vector2 moveToPosition = movingRight ? m_CurrentPushable.playerPushingRightPosition.position : m_CurrentPushable.playerPushingLeftPosition.position;
+                moveToPosition.y = m_CharacterController2D.Rigidbody2D.position.y;
+                m_CharacterController2D.Teleport(moveToPosition);
+            }
+        }
+
+        if (previousPushable != null && m_CurrentPushable != previousPushable)
+        {//we changed pushable (or don't have one anymore), stop the old one sound
+            previousPushable.EndPushing();
+        }
+
+        m_Animator.SetBool(m_HashPushingPara, pushableOnCorrectSide);
+    }
+
+    public void MovePushable()
+    {
+        //we don't push ungrounded pushable, avoid pushing floating pushable or falling pushable.
+        if (m_CurrentPushable && m_CurrentPushable.Grounded)
+            m_CurrentPushable.Move(m_MoveVector * Time.deltaTime);
+    }
+
+    */
 }

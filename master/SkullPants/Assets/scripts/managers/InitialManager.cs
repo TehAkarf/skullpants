@@ -29,9 +29,23 @@ public class InitialManager : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         mGGJIcon.SetActive(false);
 
-        //Load game?
+        //Let the game Manager know its transitioning
+        GameManager.Instance.mTransitioning = true;
+
+        //Load SceneFader Loading Screen.
+        yield return StartCoroutine(ScreenFader.FadeSceneOut(ScreenFader.FadeType.Loading));
 
         //Load the next scene
         yield return SceneManager.LoadSceneAsync("Scene1");
+
+        //Unload SceneFader Loading Screen.
+        yield return StartCoroutine(ScreenFader.FadeSceneIn());
+
+        //Let the gameManager know it is done transitioning
+        GameManager.Instance.mTransitioning = false;
+
+
+
+
     }
 }
