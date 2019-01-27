@@ -1266,7 +1266,7 @@ PrefabInstance:
     - target: {fileID: 3709932623115528220, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Alice
       objectReference: {fileID: 0}
     - target: {fileID: 3709932623115528210, guid: 3ae09851e92bcde4fa6850e8524f5f70,
         type: 3}
@@ -1322,6 +1322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3709932623115528211, guid: 3ae09851e92bcde4fa6850e8524f5f70,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ae09851e92bcde4fa6850e8524f5f70, type: 3}
@@ -1604,6 +1609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382499750598944668, guid: 265c4ab407aca93408967cba02f1aa40,
+        type: 3}
+      propertyPath: m_CameraDistance
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 265c4ab407aca93408967cba02f1aa40, type: 3}
