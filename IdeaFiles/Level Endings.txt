@@ -1,0 +1,13 @@
+﻿Stage 1 - Alice leaves bed, walks through level, ends near a table. She reaches for a tea cup, but drops it. She pauses, and then proceeds to the next level. 
+
+
+Stage 2 - Alice starts in the beginning, repetitive play happens, level ends her near the cat on a horse. Alice then falls into the next level.
+
+
+Stage 3 - Alice stands as a mermaid throws the cat doll to her. Showing the cat wasn’t there. Alice holds the cat, the screen fades off.
+
+
+Stage 4 - Alice leaves bed, walks through level, ends near a table with a cat sitting on it. 
+
+
+Ending - nothing on screen other than ending text
