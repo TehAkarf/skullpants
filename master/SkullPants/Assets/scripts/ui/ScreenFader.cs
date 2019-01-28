@@ -187,26 +187,32 @@ public class ScreenFader : MonoBehaviour
         switch (pDisplayScene)
         {
             case SceneNames.Scene1:
+                SoundManager.sInstance.PlaySound(1);
                 if (pStartOfLevel)
                     fText = 0;
                 else
                     fText = 1;
                     break;
             case SceneNames.Scene2:
+                SoundManager.sInstance.PlaySound(1);
                 if (pStartOfLevel)
                     fText = 2;
                 else
                     fText = 3;
                 break;
             case SceneNames.Scene3:
-                if (pStartOfLevel)
                     fText = 4;
+                    SoundManager.sInstance.PlaySound(1);                
                 break;      
             case SceneNames.Scene4:
+                //do not play sound at first text of final scene
                 if (pStartOfLevel)
                     fText = 5;
                 else
+                {
                     fText = 6;
+                    SoundManager.sInstance.PlaySound(1);
+                }
                 break;
         }
         TextManager.Instance.DisplayText(fText);

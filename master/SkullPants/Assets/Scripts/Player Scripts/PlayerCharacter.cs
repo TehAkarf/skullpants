@@ -229,8 +229,15 @@ public class PlayerCharacter : MonoBehaviour
 
     public void GroundedHorizontalMovement(bool useInput, float speedScale = 1f)
     {
+        
         float desiredSpeed = useInput ? PlayerInput.Instance.Horizontal.Value * maxSpeed * speedScale : 0f;
         float acceleration = useInput && PlayerInput.Instance.Horizontal.ReceivingInput ? groundAcceleration : groundDeceleration;
+
+        if (!SoundManager.sInstance.isWalking && desiredSpeed != 0)
+            SoundManager.sInstance.PlaySound(0);
+        else if(SoundManager.sInstance.isWalking && desiredSpeed == 0)
+            SoundManager.sInstance.StopWalkLoop();
+        
         m_MoveVector.x = Mathf.MoveTowards(m_MoveVector.x, desiredSpeed, acceleration * Time.deltaTime);
     }
     public void GroundedVerticalMovement()
@@ -281,6 +288,8 @@ public class PlayerCharacter : MonoBehaviour
         {
             m_MoveVector.y = jumpSpeed;
             m_Animator.SetBool(m_HashJumpPara, true);
+            SoundManager.sInstance.StopWalkLoop();
+            SoundManager.sInstance.PlaySound(2);        
         }
     }
 

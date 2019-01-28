@@ -5,14 +5,27 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager sInstance;
+
     AudioSource[] audioSources;
     float volume = 0.5f;
+
+    public bool isWalking = false;
 
     // Start is called before the first frame update
     void Start()
     {
         // Load all audio sources
         audioSources = gameObject.GetComponents<AudioSource>();
+
+        if (sInstance == null)
+        {
+            sInstance = this;
+        }
+        else
+            Destroy(gameObject);
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -44,13 +57,14 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void PlaySound(int value)
+    public void PlaySound(int value)
     {
         // 0 = walking, 1 = cat's meow, 2 = jump
         switch (value)
         {
             case 0: // Play walking SFX
                 audioSources[0].Play();
+                isWalking = true;
                 break;
             case 1: // Play cat's meow SFX
                 audioSources[1].Play();
@@ -63,6 +77,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+
+    public void StopWalkLoop()
+    {
+        isWalking = false;
+        audioSources[0].Stop();
+    }
     void ChangeVolume(float value)
     {
         // Change volume for all music
