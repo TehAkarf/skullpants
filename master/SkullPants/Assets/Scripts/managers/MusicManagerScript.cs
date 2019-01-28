@@ -49,7 +49,7 @@ public class MusicManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.LeftShift) && (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.Equals))) // Raise volume in 0.1 increments
+        if (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.Equals)) // Raise volume in 0.1 increments
         {
             if (volume < 1.0f)
             {
@@ -61,7 +61,7 @@ public class MusicManagerScript : MonoBehaviour
             }
             ChangeVolume(volume);
         }
-        if (!Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.Minus)) // Lower volume in 0.1 increments
+        if (Input.GetKey(KeyCode.Minus)) // Lower volume in 0.1 increments
         {
             if (volume > 0.0f)
             {

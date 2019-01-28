@@ -31,7 +31,7 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.Equals))) // Raise volume in 0.1 increments
+        if (Input.GetKey(KeyCode.LeftBracket)) // Raise volume in 0.1 increments
         {
             if (volume < 1.0f)
             {
@@ -43,7 +43,7 @@ public class SoundManager : MonoBehaviour
             }
             ChangeVolume(volume);
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKey(KeyCode.Minus)) // Lower volume in 0.1 increments
+        if (Input.GetKey(KeyCode.RightBracket)) // Lower volume in 0.1 increments
         {
             if (volume > 0.0f)
             {
